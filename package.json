@@ -1,0 +1,29 @@
+{
+  "name": "puppeteer-test-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./build/tests/**.js",
+    "clear": "rm -rf build",
+    "build": "babel --preset es2015 -d build/ src/"
+  },
+  "keywords": [
+    "puppetter",
+    "test",
+    "framework"
+  ],
+  "author": "Gustavo Cardoso",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "mocha-steps": "^1.3.0",
+    "puppeteer": "^14.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "prettier": "^2.7.1"
+  }
+}
