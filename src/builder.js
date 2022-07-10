@@ -9,6 +9,7 @@ export default class Launcher {
         '--no-sandbox',
         '--disable-setui-sandbox',
         '--disable-web-security',
+        '--start-maximized'
       ],
     }
 
@@ -16,6 +17,7 @@ export default class Launcher {
     const page = await browser.newPage()
     const extendedPage = new Launcher(page)
     page.setDefaultTimeout(10000)
+    page.goto('https://www.saucedemo.com/')
    
     switch (viewport) {
       case 'Mobile':
@@ -27,7 +29,7 @@ export default class Launcher {
         await page.emulate(tabletViewport)
         break
       case 'Desktop':
-        await page.setViewport({ width: 1024, height: 768 })
+        await page.setViewport({ width: 1920, height: 1080 })
         break
       default:
         throw new Error('Supported devices are only MOBILE | TABLET | DESKTOP')
